@@ -23,8 +23,7 @@ return {
 		},
 		custom_highlights = function(Color)
 			return {
-				VertSplit = { fg = Color.mantle, bg = Color.mantle }, -- the column separating vertically split windows
-				Directory = { bg = Color.mantle, fg = Color.mauve, style = { "bold" } },
+				VertSplit = { fg = Color.base, bg = Color.base }, -- the column separating vertically split windows
 			}
 		end,
 		integrations = {

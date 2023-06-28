@@ -19,8 +19,8 @@ vim.keymap.set("n", "<leader>nh", vim.cmd.nohl, opts)
 vim.keymap.set({ "n", "v", "x" }, "x", '"_x')
 
 -- Buffer
-vim.keymap.set("n", "<C-o>", ":bnext<CR>", { silent = true, remap = true })
-vim.keymap.set("n", "<C-i>", ":bprevious<CR>", { silent = true, remap = true })
+vim.keymap.set("n", "<C-l>", ":bnext<CR>", { silent = true, remap = true })
+vim.keymap.set("n", "<C-h>", ":bprevious<CR>", { silent = true, remap = true })
 
 -- Window management keybind
 vim.keymap.set("n", "<leader>sv", "<C-w>v", opts)
@@ -40,8 +40,8 @@ vim.keymap.set("n", "<c-left>", ":vertical resize +2<cr>", { silent = true, rema
 
 --- Keymap Stolen from https://github.com/ThePrimeagen/
 -- Move highlighted
-vim.keymap.set("v", "K", ":m ',<-2<CR>gv=gv", opts)
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts)
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true, remap = true })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true, remap = true })
 
 vim.keymap.set("n", "J", "mzJ`z", opts)
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
