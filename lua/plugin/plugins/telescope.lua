@@ -4,13 +4,16 @@ return {
 	branch = false,
 	dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" },
 	lazy = false,
-	keys = {
-		{ "<leader>gf", ":Telescope git_files" },
-		{ "<leader>ff", ":Telescope find_files<CR>" },
-		{ "<leader>fg", ":Telescope live_grep<CR>" },
-		{ "<leader>ft", ":Telescope buffers<CR>" },
-		{ "<leader>fb", ":Telescope git_branches<CR>" },
-	},
+	keys = function()
+		local builtin = require("telescope.builtin")
+		return {
+			{ "<leader>gf", builtin.git_files },
+			{ "<leader>ff", builtin.find_files },
+			{ "<leader>fg", ":Telescope live_grep<CR>" },
+			{ "<leader>ft", ":Telescope buffers<CR>" },
+			{ "<leader>fb", ":Telescope git_branches<CR>" },
+		}
+	end,
 	opts = function()
 		local actions = require("telescope.actions")
 
@@ -52,7 +55,7 @@ return {
 					},
 
 					n = {
-						["<esc>"] = actions.close,
+						["q"] = actions.close,
 						["<CR>"] = actions.select_default,
 						["<C-x>"] = actions.select_horizontal,
 						["<C-v>"] = actions.select_vertical,
