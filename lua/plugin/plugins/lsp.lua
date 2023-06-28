@@ -137,6 +137,7 @@ return {
 				"dockerls",
 				"docker_compose_language_service",
 				"bashls",
+				"jsonls",
 				"yamlls",
 			})
 
@@ -154,6 +155,7 @@ return {
 						"css",
 						"scss",
 						"json",
+						"jsonc",
 						"javascript",
 						"typescript",
 						"javascriptreact",
