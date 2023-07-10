@@ -3,15 +3,13 @@ return {
 	"nvim-telescope/telescope.nvim",
 	branch = false,
 	dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" },
-	lazy = false,
 	keys = function()
-		local builtin = require("telescope.builtin")
 		return {
-			{ "<leader>gf", builtin.git_files },
-			{ "<leader>ff", builtin.find_files },
-			{ "<leader>fg", ":Telescope live_grep<CR>" },
-			{ "<leader>ft", ":Telescope buffers<CR>" },
-			{ "<leader>fb", ":Telescope git_branches<CR>" },
+			{ "<leader>gf", ":Telescope git_files", silent = true },
+			{ "<leader>pv", ":Telescope find_files<CR>", silent = true },
+			{ "<leader>fg", ":Telescope live_grep<CR>", silent = true },
+			{ "<leader>ft", ":Telescope buffers<CR>", silent = true },
+			{ "<leader>fb", ":Telescope git_branches<CR>", silent = true },
 		}
 	end,
 	opts = function()
