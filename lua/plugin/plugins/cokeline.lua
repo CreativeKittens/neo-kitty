@@ -78,6 +78,12 @@ return {
 		}
 
 		return {
+			show_if_buffers_are_at_least = 0,
+			buffers = {
+				filter_valid = function(buffer)
+					return buffer.filetype ~= ""
+				end,
+			},
 			default_hl = {
 				bg = mocha.base,
 			},
