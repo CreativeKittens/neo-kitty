@@ -53,12 +53,10 @@ return {
 					information = { "underline" },
 				},
 			},
-			integrations = {
-				barbecue = {
-					dim_dirname = true,
-					bold_basename = true,
-					dim_context = false,
-				},
+			barbecue = {
+				dim_dirname = true,
+				bold_basename = true,
+				dim_context = false,
 			},
 		},
 	},

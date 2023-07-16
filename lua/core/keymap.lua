@@ -1,5 +1,5 @@
 local opts = { noremap = true, silent = true }
-
+--
 -- Set map leader
 vim.g.mapleader = " "
 
