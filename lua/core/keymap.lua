@@ -10,12 +10,12 @@ vim.g.mapleader = " "
 --[[ vim.keymap.set({ "n", "v" }, "l", "l") ]]
 
 -- File management keybind
-vim.keymap.set({ "i", "n", "v", "x" }, "<C-s>", vim.cmd.write, opts)
+vim.keymap.set({ "i", "n", "v", "x" }, "<C-s>", ":silent write<CR>", opts)
 vim.keymap.set("n", "<leader>sw", ":w", opts)
 
 -- General keybind
-vim.keymap.set({ "i", "n", "v", "x" }, "<A-n>", "<ESC>")
-vim.keymap.set("n", "<leader>nh", vim.cmd.nohl, opts)
+vim.keymap.set({ "i", "n", "v", "x" }, "<A-leader>", "<ESC>")
+vim.keymap.set("n", "<leader>nh", vim.cmd.nohlsearch, opts)
 vim.keymap.set({ "n", "v", "x" }, "x", '"_x')
 
 -- Buffer
@@ -35,8 +35,8 @@ vim.keymap.set("n", "<A-k>", "<C-w>k<CR>", opts)
 -- Resize with arrows when using multiple windows
 vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", { silent = true, remap = true })
 vim.keymap.set("n", "<c-down>", ":resize +2<cr>", { silent = true, remap = true })
-vim.keymap.set("n", "<c-right>", ":vertical resize -2<cr>", { silent = true, remap = true })
-vim.keymap.set("n", "<c-left>", ":vertical resize +2<cr>", { silent = true, remap = true })
+vim.keymap.set("n", "<c-left>", ":vertical resize -2<cr>", { silent = true, remap = true })
+vim.keymap.set("n", "<c-right>", ":vertical resize +2<cr>", { silent = true, remap = true })
 
 --- Keymap Stolen from https://github.com/ThePrimeagen/
 -- Move highlighted
