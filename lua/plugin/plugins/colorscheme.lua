@@ -27,6 +27,7 @@ return {
 			}
 		end,
 		integrations = {
+			harpoon = true,
 			neotree = true,
 			gitsigns = true,
 			treesitter = true,

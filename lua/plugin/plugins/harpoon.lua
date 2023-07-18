@@ -15,13 +15,13 @@ return {
 			end,
 		},
 		{
-			"<C-k>",
+			"<tab>",
 			function()
 				require("harpoon.ui").nav_next()
 			end,
 		},
 		{
-			"<C-j>",
+			"<S-tab>",
 			function()
 				require("harpoon.ui").nav_prev()
 			end,

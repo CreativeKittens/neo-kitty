@@ -1,8 +1,21 @@
 return {
 	"willothy/nvim-cokeline",
+	lazy = false,
 	dependencies = {
 		"nvim-lua/plenary.nvim", -- Required for v0.4.0+
 		"nvim-tree/nvim-web-devicons", -- If you want devicons
+	},
+	keys = {
+		{
+			"<leader>bd",
+			function()
+				require("core.util").buf_kill("bd")
+			end,
+		},
+		{ "<S-h>", "<Plug>(cokeline-focus-prev)", { silent = true } },
+		{ "<S-l>", "<Plug>(cokeline-focus-next)", { silent = true } },
+		{ "<leader>h", "<Plug>(cokeline-switch-prev)", { silent = true } },
+		{ "<leader>l", "<Plug>(cokeline-switch-next)", { silent = true } },
 	},
 	config = true,
 	opts = function()
@@ -24,7 +37,8 @@ return {
 
 		local filename = {
 			text = function(buffer)
-				return (buffer.is_readonly and buffer.filename .. " 󰌾 ") or buffer.filename .. " "
+				return (buffer.is_readonly and buffer.unique_prefix .. buffer.filename .. " 󰌾 ")
+					or buffer.unique_prefix .. buffer.filename .. " "
 			end,
 			fg = function(buffer)
 				return (buffer.is_readonly and mocha.overlay0) or (buffer.is_focused and mocha.text) or mocha.overlay0
@@ -79,12 +93,13 @@ return {
 
 		return {
 			show_if_buffers_are_at_least = 0,
+
 			buffers = {
 				filter_valid = function(buffer)
 					return buffer.filename ~= "[No Name]"
-					--[[ return buffer.filetype ~= "" ]]
 				end,
 			},
+
 			default_hl = {
 				bg = mocha.base,
 			},
