@@ -19,8 +19,8 @@ vim.keymap.set("n", "<leader>nh", vim.cmd.nohlsearch, opts)
 vim.keymap.set({ "n", "v", "x" }, "x", '"_x')
 
 -- Buffer
-vim.keymap.set("n", "<C-l>", ":bnext<CR>", { silent = true, remap = true })
-vim.keymap.set("n", "<C-h>", ":bprevious<CR>", { silent = true, remap = true })
+--[[ vim.keymap.set("n", "<C-l>", ":bnext<CR>", { silent = true, remap = true }) ]]
+--[[ vim.keymap.set("n", "<C-h>", ":bprevious<CR>", { silent = true, remap = true }) ]]
 
 -- Window management keybind
 vim.keymap.set("n", "<leader>sv", "<C-w>v", opts)
