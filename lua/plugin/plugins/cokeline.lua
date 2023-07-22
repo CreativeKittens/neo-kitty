@@ -4,12 +4,13 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim", -- Required for v0.4.0+
 		"nvim-tree/nvim-web-devicons", -- If you want devicons
+		"moll/vim-bbye",
 	},
 	keys = {
 		{
 			"<leader>bd",
 			function()
-				require("core.util").buf_kill("bd")
+				require("core.util").buf_kill("Bdelete")
 			end,
 		},
 		{ "<S-h>", "<Plug>(cokeline-focus-prev)", { silent = true } },

@@ -14,7 +14,7 @@ vim.keymap.set({ "i", "n", "v", "x" }, "<C-s>", ":silent write<CR>", opts)
 vim.keymap.set("n", "<leader>sw", ":w", opts)
 
 -- General keybind
-vim.keymap.set({ "i", "n", "v", "x" }, "<A-leader>", "<ESC>")
+vim.keymap.set({ "i", "n", "v", "x" }, "<A-n>", "<ESC>")
 vim.keymap.set("n", "<leader>nh", vim.cmd.nohlsearch, opts)
 vim.keymap.set({ "n", "v", "x" }, "x", '"_x')
 
