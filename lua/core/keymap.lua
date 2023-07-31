@@ -35,8 +35,8 @@ vim.keymap.set("n", "<A-k>", "<C-w>k<CR>", opts)
 -- Resize with arrows when using multiple windows
 vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", { silent = true, remap = true })
 vim.keymap.set("n", "<c-down>", ":resize +2<cr>", { silent = true, remap = true })
-vim.keymap.set("n", "<c-left>", ":vertical resize -2<cr>", { silent = true, remap = true })
-vim.keymap.set("n", "<c-right>", ":vertical resize +2<cr>", { silent = true, remap = true })
+vim.keymap.set("n", "<c-right>", ":vertical resize -2<cr>", { silent = true, remap = true })
+vim.keymap.set("n", "<c-left>", ":vertical resize +2<cr>", { silent = true, remap = true })
 
 --- Keymap Stolen from https://github.com/ThePrimeagen/
 -- Move highlighted
