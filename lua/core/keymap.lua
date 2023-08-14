@@ -10,8 +10,8 @@ vim.g.mapleader = " "
 --[[ vim.keymap.set({ "n", "v" }, "l", "l") ]]
 
 -- File management keybind
-vim.keymap.set({ "i", "n", "v", "x" }, "<C-s>", ":silent write<CR>", opts)
-vim.keymap.set("n", "<leader>sw", ":w", opts)
+vim.keymap.set({ "n", "v", "x" }, "<C-s>", ":silent write<CR>", opts)
+vim.keymap.set("n", "<leader>sw", ":silent write<CR>", opts)
 
 -- General keybind
 vim.keymap.set({ "i", "n", "v", "x" }, "<A-n>", "<ESC>")
