@@ -6,7 +6,7 @@ return {
 	keys = function()
 		return {
 			{ "<leader>gf", ":Telescope git_files", silent = true },
-			{ "<leader>pv", ":Telescope find_files<CR>", silent = true },
+			{ "<leader>e", ":Telescope find_files<CR>", silent = true },
 			{ "<leader>fg", ":Telescope live_grep<CR>", silent = true },
 			{ "<leader>ft", ":Telescope buffers<CR>", silent = true },
 			{ "<leader>fb", ":Telescope git_branches<CR>", silent = true },

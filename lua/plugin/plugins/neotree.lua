@@ -11,7 +11,7 @@ return {
 	},
 	keys = {
 		{
-			"<leader>e",
+			"<leader>pv",
 			function()
 				require("neo-tree.command").execute({ toggle = true, dir = require("core.util").get_root() })
 			end,
