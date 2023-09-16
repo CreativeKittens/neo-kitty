@@ -15,8 +15,8 @@ return {
 		},
 		{ "<S-h>", "<Plug>(cokeline-focus-prev)", { silent = true } },
 		{ "<S-l>", "<Plug>(cokeline-focus-next)", { silent = true } },
-		{ "<leader>h", "<Plug>(cokeline-switch-prev)", { silent = true } },
-		{ "<leader>l", "<Plug>(cokeline-switch-next)", { silent = true } },
+		{ "<leader>j", "<Plug>(cokeline-switch-prev)", { silent = true } },
+		{ "<leader>k", "<Plug>(cokeline-switch-next)", { silent = true } },
 	},
 	config = true,
 	opts = function()
