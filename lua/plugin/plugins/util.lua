@@ -45,12 +45,12 @@ return {
 	},
 
 	-- Notify
-	{
-		"rcarriga/nvim-notify",
-		config = function()
-			vim.notify = require("notify")
-		end,
-	},
+	--[[ { ]]
+	--[[ 	"rcarriga/nvim-notify", ]]
+	--[[ 	config = function() ]]
+	--[[ 		vim.notify = require("notify") ]]
+	--[[ 	end, ]]
+	--[[ }, ]]
 
 	-- Noice
 	{
@@ -58,7 +58,7 @@ return {
 		--[[ event = "VeryLazy", ]]
 		dependencies = {
 			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
+			--[[ "rcarriga/nvim-notify", ]]
 		},
 		opts = {
 			lsp = {
