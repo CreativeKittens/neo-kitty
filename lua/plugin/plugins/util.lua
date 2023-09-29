@@ -2,10 +2,24 @@ return {
 	-- Indent blankline
 	{
 		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
 		opts = {
-			char = "│",
-			context_char = "│",
-			filetype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
+			--[[ char = "│", ]]
+			--[[ context_char = "│", ]]
+			exclude = {
+				filetypes = {
+					"help",
+					"alpha",
+					"dashboard",
+					"neo-tree",
+					"Trouble",
+					"lazy",
+					"mason",
+				},
+			},
+			scope = {
+				enabled = true,
+			},
 			--[[ show_current_context = true, ]]
 		},
 	},
