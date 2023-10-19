@@ -41,6 +41,9 @@ return {
 				return (buffer.is_readonly and buffer.unique_prefix .. buffer.filename .. " 󰌾 ")
 					or buffer.unique_prefix .. buffer.filename .. " "
 			end,
+			fg = function(buffer)
+				return (buffer.is_readonly and mocha.overlay0) or (buffer.is_focused and mocha.text) or mocha.overlay0
+			end,
 			bold = function(buffer)
 				return buffer.is_focused
 			end,
