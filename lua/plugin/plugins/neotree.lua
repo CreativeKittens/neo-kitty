@@ -140,14 +140,17 @@ return {
 			},
 			commands = {
 				telescope_find = function(state)
-					local node = state.tree:get_node()
-					local path = node:get_id()
-					require("telescope.builtin").find_files(getTelescopeOpts(state, path))
+					--[[ local node = state.tree:get_node() ]]
+					--[[ local path = node:get_id() ]]
+					--[[ require("telescope.builtin").find_files(getTelescopeOpts(state, path)) ]]
+
+					require("telescope.builtin").find_files()
 				end,
 				telescope_grep = function(state)
-					local node = state.tree:get_node()
-					local path = node:get_id()
-					require("telescope.builtin").live_grep(getTelescopeOpts(state, path))
+					--[[ local node = state.tree:get_node() ]]
+					--[[ local path = node:get_id() ]]
+					--[[ require("telescope.builtin").live_grep(getTelescopeOpts(state, path)) ]]
+					require("telescope.builtin").live_grep()
 				end,
 			},
 			window = {

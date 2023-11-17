@@ -5,11 +5,11 @@ return {
 	dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" },
 	keys = function()
 		return {
-			{ "<leader>gf", ":Telescope git_files", silent = true },
-			{ "<leader>ff", ":Telescope find_files<CR>", silent = true },
-			{ "<leader>fg", ":Telescope live_grep<CR>", silent = true },
-			{ "<leader>ft", ":Telescope buffers<CR>", silent = true },
-			{ "<leader>fb", ":Telescope git_branches<CR>", silent = true },
+			{ "<leader>f", ":Telescope find_files<CR>", silent = true },
+			{ "<leader>g", ":Telescope live_grep<CR>", silent = true },
+			{ "<leader>Fg", ":Telescope git_files", silent = true },
+			{ "<leader>Ft", ":Telescope buffers<CR>", silent = true },
+			{ "<leader>Fb", ":Telescope git_branches<CR>", silent = true },
 		}
 	end,
 	opts = function()
@@ -88,9 +88,11 @@ return {
 			pickers = {
 				find_files = {
 					theme = "dropdown",
+					hidden = true,
 				},
 				live_grep = {
 					theme = "dropdown",
+					hidden = true,
 				},
 				buffers = {
 					theme = "dropdown",
