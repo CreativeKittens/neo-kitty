@@ -2,9 +2,14 @@ local M = {}
 
 M.root_patterns = { ".git", "lua" }
 
-function M.get_root()
+function M.get_root(path_arg)
 	---@type string?
-	local path = vim.api.nvim_buf_get_name(0)
+	local path = path_arg
+
+	if path_arg == nil then
+		path = vim.api.nvim_buf_get_name(0)
+	end
+
 	path = path ~= "" and vim.loop.fs_realpath(path) or nil
 	---@type string[]
 	local roots = {}
