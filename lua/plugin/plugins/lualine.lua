@@ -33,7 +33,7 @@ return {
 					normal = { c = { fg = mocha.lavender, bg = mocha.surface0 } },
 					inactive = { c = { fg = mocha.lavender, bg = mocha.surface0 } },
 				},
-				disabled_filetypes = { "TelescopePrompt" },
+				disabled_filetypes = { "TelescopePrompt", "neo-tree", "toggleterm" },
 				ignore_focus = { "TelescopePrompt", "neo-tree", "toggleterm" },
 				globalstatus = true,
 			},

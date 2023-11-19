@@ -115,6 +115,15 @@ return {
 	-- Vim iluminate
 	{
 		"RRethy/vim-illuminate",
+		config = function()
+			require("illuminate").configure({
+				filetypes_denylist = {
+					"toggleterm",
+					"TelescopePrompt",
+					"neo-tree",
+				},
+			})
+		end,
 	},
 
 	-- Unception
