@@ -19,6 +19,7 @@ return {
 				lualine_a = {
 					{
 						"mode",
+						icon_only = true,
 						separator = {
 							right = "",
 						},

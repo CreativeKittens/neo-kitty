@@ -2,6 +2,7 @@
 return {
 	"akinsho/toggleterm.nvim",
 	version = "*",
+	event = "BufEnter",
 	config = function(_, opts)
 		function _G.set_terminal_keymaps()
 			local optskey = { buffer = 0 }
