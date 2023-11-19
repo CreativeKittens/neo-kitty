@@ -1,6 +1,6 @@
 return {
 	"willothy/nvim-cokeline",
-	lazy = false,
+	event = "VimEnter",
 	dependencies = {
 		"nvim-lua/plenary.nvim", -- Required for v0.4.0+
 		"nvim-tree/nvim-web-devicons", -- If you want devicons
@@ -160,8 +160,8 @@ return {
 					{
 						text = " File Tree",
 						style = "bold",
-						fg = mocha.text,
-						bg = mocha.base,
+						fg = mocha.mauve,
+						bg = mocha.mantle,
 					},
 				},
 			},

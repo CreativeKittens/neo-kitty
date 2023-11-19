@@ -17,6 +17,8 @@ vim.keymap.set("n", "<leader>sw", ":silent write<CR>", opts)
 --[[ vim.keymap.set({ "i", "n", "v", "x" }, "<A-n>", "<ESC>") ]]
 vim.keymap.set("n", "<leader>nh", vim.cmd.nohlsearch, opts)
 vim.keymap.set({ "n", "v", "x" }, "x", '"_x')
+vim.keymap.set({ "n" }, "<c-h>", ":tabprevious<CR>", opts)
+vim.keymap.set({ "n" }, "<c-h>", ":tabnext<CR>", opts)
 
 -- Buffer
 --[[ vim.keymap.set("n", "<C-l>", ":bnext<CR>", { silent = true, remap = true }) ]]

@@ -52,27 +52,19 @@ return {
 
 	-- Autopairs
 	{
-		"jiangmiao/auto-pairs",
-		init = function()
-			vim.g.AutoPairsShortcutJump = ""
-		end,
+		"altermo/ultimate-autopair.nvim",
+		event = { "InsertEnter", "CmdlineEnter" },
+		branch = "v0.6", --recomended as each new version will have breaking changes
+		opts = {
+			--Config goes here
+		},
 	},
-
-	-- Notify
-	--[[ { ]]
-	--[[ 	"rcarriga/nvim-notify", ]]
-	--[[ 	config = function() ]]
-	--[[ 		vim.notify = require("notify") ]]
-	--[[ 	end, ]]
-	--[[ }, ]]
 
 	-- Noice
 	{
 		"folke/noice.nvim",
-		--[[ event = "VeryLazy", ]]
 		dependencies = {
 			"MunifTanjim/nui.nvim",
-			--[[ "rcarriga/nvim-notify", ]]
 		},
 		opts = {
 			lsp = {
@@ -103,13 +95,14 @@ return {
 		"utilyre/barbecue.nvim",
 		name = "barbecue",
 		version = "*",
+		event = { "VimEnter", "TermResponse" },
 		dependencies = {
 			"SmiteshP/nvim-navic",
 			"nvim-tree/nvim-web-devicons", -- optional dependency
 		},
 		opts = {
 			theme = "catppuccin",
-			exclude_filetypes = { "NvimTree", "toggleterm" },
+			exclude_filetypes = { "toggleterm" },
 		},
 	},
 
@@ -117,5 +110,24 @@ return {
 	{
 		"mg979/vim-visual-multi",
 		branch = "master",
+	},
+
+	-- Vim iluminate
+	{
+		"RRethy/vim-illuminate",
+	},
+
+	-- Unception
+	{
+		"samjwill/nvim-unception",
+		init = function()
+			-- Optional settings go here!
+			vim.g.unception_open_buffer_in_new_tab = true
+		end,
+	},
+
+	-- Fcitx
+	{
+		"lilydjwg/fcitx.vim",
 	},
 }

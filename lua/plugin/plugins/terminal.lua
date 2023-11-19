@@ -2,7 +2,6 @@
 return {
 	"akinsho/toggleterm.nvim",
 	version = "*",
-	event = "BufEnter",
 	config = function(_, opts)
 		function _G.set_terminal_keymaps()
 			local optskey = { buffer = 0 }
@@ -23,22 +22,27 @@ return {
 	opts = function()
 		local mocha = require("catppuccin.palettes").get_palette("mocha")
 		return {--[[ things you want to change go here]]
+			size = 80,
 			shell = vim.o.shell,
 			open_mapping = [[<A-'>]],
 			autochdir = true, -- when neovim changes it current directory the terminal will change it's own when next it's opened0
 			shade_terminals = true,
-			start_in_insert = true,
+			shading_factor = "-10",
+			start_in_insert = false,
 			insert_mappings = true,
 			persist_size = true,
+			persist_mode = false,
 			close_on_exit = true,
-			shell = vim.o.shell,
 			highlights = {
 				FloatBorder = {
 					guifg = mocha.blue,
 				},
 			},
+			winbar = {
+				enabled = true,
+			},
 			hide_number = false,
-			direction = "float",
+			direction = "vertical",
 			float_opts = {
 				border = "curved",
 				winblend = 0,

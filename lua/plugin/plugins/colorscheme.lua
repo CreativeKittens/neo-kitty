@@ -16,14 +16,19 @@ return {
 		},
 		transparent_background = false,
 		show_end_of_buffer = false,
-		term_colors = false,
+		term_colors = true,
 		styles = {
 			comments = { "italic" },
 			conditionals = { "italic" },
+			types = { "bold" },
+			functions = { "bold" },
 		},
 		custom_highlights = function(Color)
 			return {
-				VertSplit = { fg = Color.mantle, bg = Color.mantle }, -- the column separating vertically split windows
+				NeoTreeNormal = { bg = Color.mantle },
+				NeoTreeNormalNC = { bg = Color.mantle },
+				NeoTreeVertSplit = { bg = Color.mantle, fg = Color.mantle },
+				VertSplit = { fg = Color.base, bg = Color.base }, -- the column separating vertically split windows
 			}
 		end,
 		integrations = {

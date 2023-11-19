@@ -33,7 +33,11 @@ return {
 					normal = { c = { fg = mocha.lavender, bg = mocha.surface0 } },
 					inactive = { c = { fg = mocha.lavender, bg = mocha.surface0 } },
 				},
+				disabled_filetypes = { "TelescopePrompt" },
+				ignore_focus = { "TelescopePrompt", "neo-tree", "toggleterm" },
+				globalstatus = true,
 			},
+			extensions = { "lazy" },
 			sections = {
 				-- these are to remove the defaults
 				lualine_a = {},
