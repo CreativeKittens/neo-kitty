@@ -22,7 +22,7 @@ return {
 	opts = function()
 		local mocha = require("catppuccin.palettes").get_palette("mocha")
 		return {--[[ things you want to change go here]]
-			size = 80,
+			size = 60,
 			shell = vim.o.shell,
 			open_mapping = [[<A-'>]],
 			autochdir = true, -- when neovim changes it current directory the terminal will change it's own when next it's opened0
@@ -54,3 +54,4 @@ return {
 		}
 	end,
 }
+-- Toggleterm
