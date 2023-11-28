@@ -60,7 +60,7 @@ vim.api.nvim_create_augroup("kittypad", { clear = true })
 vim.api.nvim_create_autocmd({ "QuitPre" }, {
 	pattern = { "*" },
 	callback = function()
-		vim.cmd("silent !kitty @ set-spacing padding-top=4 padding-right=2 padding-left=6 padding-bottom=0")
+		vim.cmd("silent !kitty @ set-spacing padding-top=8 padding-right=2 padding-left=12 padding-bottom=0")
 		vim.cmd("sleep 10m")
 	end,
 	group = "kittypad",
