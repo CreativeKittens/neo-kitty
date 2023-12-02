@@ -92,7 +92,7 @@ return {
 			end,
 		}
 		local function harpoon_sorter()
-			local harpoon = require("harpoon.mark")
+			-- local harpoon = require("harpoon.mark")
 			local cache = {}
 
 			local function marknum(buf, force)
@@ -137,7 +137,7 @@ return {
 				filter_valid = function(buffer)
 					return buffer.filename ~= "[No Name]"
 				end,
-				new_buffers_position = harpoon_sorter(),
+				-- new_buffers_position = harpoon_sorter(),
 			},
 
 			default_hl = {
