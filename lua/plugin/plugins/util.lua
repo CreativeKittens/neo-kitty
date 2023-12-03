@@ -90,28 +90,6 @@ return {
 		},
 	},
 
-	-- Barbecue
-	{
-		"utilyre/barbecue.nvim",
-		name = "barbecue",
-		version = "*",
-		event = { "VimEnter", "TermResponse" },
-		dependencies = {
-			"SmiteshP/nvim-navic",
-			"nvim-tree/nvim-web-devicons", -- optional dependency
-		},
-		opts = {
-			theme = "catppuccin",
-			exclude_filetypes = { "toggleterm" },
-		},
-	},
-
-	-- Multi visual
-	{
-		"mg979/vim-visual-multi",
-		branch = "master",
-	},
-
 	-- Vim iluminate
 	{
 		"RRethy/vim-illuminate",
