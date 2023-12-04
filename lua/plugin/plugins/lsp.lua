@@ -217,6 +217,8 @@ return {
 					-- Replace these with the tools you have installed
 					null_ls.builtins.formatting.prettier.with({
 						extra_args = {
+							"--tab-width 4",
+							"--use-tabs",
 							"--no-semi",
 							"--single-quote",
 							"--jsx-single-quote",

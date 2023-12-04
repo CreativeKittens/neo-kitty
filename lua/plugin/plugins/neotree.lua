@@ -26,6 +26,9 @@ return {
 		},
 	},
 	opts = function()
+		-- disable netrw at the very start of your init.lua
+		vim.g.loaded_netrw = 1
+		vim.g.loaded_netrwPlugin = 1
 		local function getTelescopeOpts(state, path)
 			local root_path = require("core.util").get_root(path)
 			return {
