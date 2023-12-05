@@ -161,7 +161,7 @@ return {
 						text = " File Tree",
 						style = "bold",
 						fg = mocha.mauve,
-						bg = mocha.mantle,
+						bg = mocha.base,
 					},
 				},
 			},

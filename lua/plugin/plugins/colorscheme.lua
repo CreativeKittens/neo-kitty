@@ -25,9 +25,9 @@ return {
 		},
 		custom_highlights = function(Color)
 			return {
-				NeoTreeNormal = { bg = Color.mantle },
-				NeoTreeNormalNC = { bg = Color.mantle },
-				NeoTreeVertSplit = { bg = Color.mantle, fg = Color.mantle },
+				NeoTreeNormal = { bg = Color.base },
+				NeoTreeNormalNC = { bg = Color.base },
+				NeoTreeVertSplit = { bg = Color.base, fg = Color.base },
 				VertSplit = { fg = Color.base, bg = Color.base }, -- the column separating vertically split windows
 			}
 		end,
