@@ -3,25 +3,33 @@ return {
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
-		opts = {
-			--[[ char = "│", ]]
-			--[[ context_char = "│", ]]
-			exclude = {
-				filetypes = {
-					"help",
-					"alpha",
-					"dashboard",
-					"neo-tree",
-					"Trouble",
-					"lazy",
-					"mason",
+		opts = function()
+			--[[ local highlight = { ]]
+			--[[ 	"RainbowRed", ]]
+			--[[ 	"RainbowYellow", ]]
+			--[[ 	"RainbowBlue", ]]
+			--[[ 	"RainbowOrange", ]]
+			--[[ 	"RainbowGreen", ]]
+			--[[ 	"RainbowViolet", ]]
+			--[[ 	"RainbowCyan", ]]
+			--[[ } ]]
+			return {
+				exclude = {
+					filetypes = {
+						"help",
+						"alpha",
+						"dashboard",
+						"neo-tree",
+						"Trouble",
+						"lazy",
+						"mason",
+					},
 				},
-			},
-			scope = {
-				enabled = true,
-			},
-			--[[ show_current_context = true, ]]
-		},
+				scope = {
+					enabled = true,
+				},
+			}
+		end,
 	},
 
 	-- Vim surround

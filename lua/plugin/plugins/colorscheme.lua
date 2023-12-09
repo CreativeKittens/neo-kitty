@@ -26,14 +26,15 @@ return {
 		integrations = {
 			harpoon = true,
 			neotree = true,
+			nvimtree = true,
 			gitsigns = true,
 			treesitter = true,
 			telescope = true,
+			treesitter_context = true,
 			indent_blankline = {
 				enabled = true,
-				colored_indent_levels = false,
+				colored_indent_levels = true,
 			},
-			treesitter_context = true,
 			notify = true,
 			ts_rainbow2 = true,
 			native_lsp = {

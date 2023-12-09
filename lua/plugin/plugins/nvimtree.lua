@@ -195,7 +195,7 @@ return {
 			},
 			filters = {
 				git_ignored = true,
-				dotfiles = false,
+				dotfiles = true,
 				git_clean = false,
 				no_buffer = false,
 			},
