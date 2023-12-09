@@ -23,14 +23,6 @@ return {
 			types = { "bold" },
 			functions = { "bold" },
 		},
-		custom_highlights = function(Color)
-			return {
-				NeoTreeNormal = { bg = Color.base },
-				NeoTreeNormalNC = { bg = Color.base },
-				NeoTreeVertSplit = { bg = Color.base, fg = Color.base },
-				VertSplit = { fg = Color.base, bg = Color.base }, -- the column separating vertically split windows
-			}
-		end,
 		integrations = {
 			harpoon = true,
 			neotree = true,

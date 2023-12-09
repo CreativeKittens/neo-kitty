@@ -22,15 +22,15 @@ return {
 	opts = function()
 		local mocha = require("catppuccin.palettes").get_palette("mocha")
 		return {--[[ things you want to change go here]]
-			size = 15,
+			size = 10,
 			shell = vim.o.shell,
 			open_mapping = [[<A-'>]],
 			autochdir = true, -- when neovim changes it current directory the terminal will change it's own when next it's opened0
 			shade_terminals = true,
 			shading_factor = "-10",
-			start_in_insert = false,
+			start_in_insert = true,
 			insert_mappings = true,
-			persist_size = true,
+			persist_size = false,
 			persist_mode = false,
 			close_on_exit = true,
 			highlights = {
@@ -42,8 +42,11 @@ return {
 				enabled = true,
 			},
 			hide_number = false,
-			direction = "horizontal",
+			direction = "float",
 			float_opts = {
+				width = 150,
+				height = 40,
+				enabled = true,
 				border = "curved",
 				winblend = 0,
 				highlights = {

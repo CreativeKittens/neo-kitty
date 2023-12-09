@@ -37,7 +37,7 @@ return {
 				ignore_focus = { "TelescopePrompt", "neo-tree", "toggleterm" },
 				globalstatus = true,
 			},
-			extensions = { "lazy" },
+			extensions = { "lazy", "nvim-tree", "toggleterm" },
 			sections = {
 				-- these are to remove the defaults
 				lualine_a = {},

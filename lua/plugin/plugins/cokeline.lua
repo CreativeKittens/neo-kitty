@@ -25,11 +25,14 @@ return {
 		local separator = {
 			text = " ",
 			truncation = { priority = 1 },
+			fg = function(buffer)
+				return buffer.is_focused and mocha.overlay0 or mocha.surface0
+			end,
 		}
 
 		local dev_icon = {
 			text = function(buffer)
-				return " " .. buffer.devicon.icon
+				return "" .. buffer.devicon.icon
 			end,
 			fg = function(buffer)
 				return buffer.devicon.color
@@ -85,50 +88,50 @@ return {
 		}
 
 		local close_button = {
-			text = " ",
+			text = "  ",
 			delete_buffer_on_left_click = true,
 			fg = function(buffer)
 				return buffer.is_focused and mocha.text or mocha.overlay0
 			end,
 		}
-		local function harpoon_sorter()
-			-- local harpoon = require("harpoon.mark")
-			local cache = {}
-
-			local function marknum(buf, force)
-				local b = cache[buf.number]
-				if b == nil or force then
-					b = harpoon.get_index_of(buf.path)
-					cache[buf.number] = b
-				end
-				return b
-			end
-
-			harpoon.on("changed", function()
-				for _, buf in ipairs(require("cokeline.buffers").get_visible()) do
-					cache[buf.number] = marknum(buf, true)
-				end
-			end)
-
-			---@type a Buffer
-			---@type b Buffer
-			-- Use this in `config.buffers.new_buffers_position`
-			return function(a, b)
-				local ma = marknum(a)
-				local mb = marknum(b)
-				if ma and not mb then
-					return true
-				elseif mb and not ma then
-					return false
-				elseif ma == nil and mb == nil then
-					-- switch the a and b.index to place non-harpoon buffers on the left
-					-- side of the tabline - this puts them on the right.
-					ma = a._valid_index
-					mb = b._valid_index
-				end
-				return ma < mb
-			end
-		end
+		--[[ local function harpoon_sorter() ]]
+		--[[ 	-- local harpoon = require("harpoon.mark") ]]
+		--[[ 	local cache = {} ]]
+		--[[]]
+		--[[ 	local function marknum(buf, force) ]]
+		--[[ 		local b = cache[buf.number] ]]
+		--[[ 		if b == nil or force then ]]
+		--[[ 			b = harpoon.get_index_of(buf.path) ]]
+		--[[ 			cache[buf.number] = b ]]
+		--[[ 		end ]]
+		--[[ 		return b ]]
+		--[[ 	end ]]
+		--[[]]
+		--[[ 	harpoon.on("changed", function() ]]
+		--[[ 		for _, buf in ipairs(require("cokeline.buffers").get_visible()) do ]]
+		--[[ 			cache[buf.number] = marknum(buf, true) ]]
+		--[[ 		end ]]
+		--[[ 	end) ]]
+		--[[]]
+		--[[ 	---@type a Buffer ]]
+		--[[ 	---@type b Buffer ]]
+		--[[ 	-- Use this in `config.buffers.new_buffers_position` ]]
+		--[[ 	return function(a, b) ]]
+		--[[ 		local ma = marknum(a) ]]
+		--[[ 		local mb = marknum(b) ]]
+		--[[ 		if ma and not mb then ]]
+		--[[ 			return true ]]
+		--[[ 		elseif mb and not ma then ]]
+		--[[ 			return false ]]
+		--[[ 		elseif ma == nil and mb == nil then ]]
+		--[[ 			-- switch the a and b.index to place non-harpoon buffers on the left ]]
+		--[[ 			-- side of the tabline - this puts them on the right. ]]
+		--[[ 			ma = a._valid_index ]]
+		--[[ 			mb = b._valid_index ]]
+		--[[ 		end ]]
+		--[[ 		return ma < mb ]]
+		--[[ 	end ]]
+		--[[ end ]]
 
 		return {
 			show_if_buffers_are_at_least = 0,
@@ -139,11 +142,11 @@ return {
 				end,
 				-- new_buffers_position = harpoon_sorter(),
 			},
-
 			default_hl = {
-				bg = mocha.base,
+				bg = "none",
 			},
 			components = {
+				separator,
 				dev_icon,
 				filename,
 				modified_status,
@@ -152,16 +155,15 @@ return {
 				diagnostics_info,
 				diagnostics_hint,
 				close_button,
-				separator,
 			},
 			sidebar = {
-				filetype = "neo-tree",
+				filetype = { "NvimTree", "neo-tree" },
 				components = {
 					{
 						text = " File Tree",
 						style = "bold",
 						fg = mocha.mauve,
-						bg = mocha.base,
+						bg = mocha.mantle,
 					},
 				},
 			},

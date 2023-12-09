@@ -10,7 +10,7 @@ vim.fn.sign_define("DiagnosticSignWarn", {
 	texthl = "DiagnosticSignWarn",
 })
 vim.fn.sign_define("DiagnosticSignInfo", {
-	text = "󰌵 ",
+	text = "󰌵",
 	texthl = "DiagnosticSignInfo",
 })
 vim.fn.sign_define("DiagnosticSignHint", {
@@ -66,17 +66,17 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
-vim.api.nvim_create_augroup("kittypad", { clear = true })
-vim.api.nvim_create_autocmd({ "QuitPre" }, {
-	pattern = { "*" },
-	callback = function()
-		vim.cmd("silent !kitty @ set-spacing padding-top=6 padding-right=2 padding-left=8 padding-bottom=0")
-		vim.cmd("sleep 10m")
-	end,
-	group = "kittypad",
-})
-vim.api.nvim_create_autocmd({ "VimEnter", "BufEnter", "BufNew" }, {
-	pattern = { "*" },
-	command = "silent !kitty @ set-spacing padding=0",
-	group = "kittypad",
-})
+--[[ vim.api.nvim_create_augroup("kittypad", { clear = true }) ]]
+--[[ vim.api.nvim_create_autocmd({ "QuitPre" }, { ]]
+--[[ 	pattern = { "*" }, ]]
+--[[ 	callback = function() ]]
+--[[ 		vim.cmd("silent !kitty @ set-spacing padding-top=6 padding-right=2 padding-left=8 padding-bottom=0") ]]
+--[[ 		vim.cmd("sleep 10m") ]]
+--[[ 	end, ]]
+--[[ 	group = "kittypad", ]]
+--[[ }) ]]
+--[[ vim.api.nvim_create_autocmd({ "VimEnter", "BufEnter", "BufNew" }, { ]]
+--[[ 	pattern = { "*" }, ]]
+--[[ 	command = "silent !kitty @ set-spacing padding=0", ]]
+--[[ 	group = "kittypad", ]]
+--[[ }) ]]

@@ -99,6 +99,7 @@ return {
 					"toggleterm",
 					"TelescopePrompt",
 					"neo-tree",
+					"NvimTree",
 				},
 			})
 		end,
