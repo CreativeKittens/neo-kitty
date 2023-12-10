@@ -5,6 +5,7 @@ return {
 		local root = require("core.util").get_root()
 
 		local function open_tree()
+			print(root)
 			require("nvim-tree.api").tree.toggle({ path = root, update_root = true, focus = true })
 		end
 

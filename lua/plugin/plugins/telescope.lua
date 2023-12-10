@@ -3,14 +3,45 @@ return {
 	"nvim-telescope/telescope.nvim",
 	branch = false,
 	dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" },
-	lazy = false,
 	keys = function()
+		local root = require("core.util").get_root()
+
 		return {
-			{ "<leader>f", ":Telescope find_files<CR>", silent = true },
-			{ "<leader>g", ":Telescope live_grep<CR>", silent = true },
-			{ "<leader>Fg", ":Telescope git_files", silent = true },
-			{ "<leader>Ft", ":Telescope buffers<CR>", silent = true },
-			{ "<leader>Fb", ":Telescope git_branches<CR>", silent = true },
+			{
+				"<leader>f",
+				function()
+					require("telescope.builtin").find_files({ cwd = root, search_dirs = { root } })
+				end,
+				silent = true,
+			},
+			{
+				"<leader>g",
+				function()
+					require("telescope.builtin").find_files({ cwd = root, search_dirs = { root } })
+				end,
+				silent = true,
+			},
+			{
+				"<leader>Fg",
+				function()
+					require("telescope.builtin").git_files({ cwd = root, search_dirs = { root } })
+				end,
+				silent = true,
+			},
+			{
+				"<leader>Ft",
+				function()
+					require("telescope.builtin").buffers({ cwd = root, search_dirs = { root } })
+				end,
+				silent = true,
+			},
+			{
+				"<leader>Fb",
+				function()
+					require("telescope.builtin").git_branches({ cwd = root, search_dirs = { root } })
+				end,
+				silent = true,
+			},
 		}
 	end,
 	opts = function()

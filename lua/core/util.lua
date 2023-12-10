@@ -1,48 +1,35 @@
 local M = {}
 
-M.root_patterns = { ".git", "lua" }
+-- Function to get the current workspace project path (Written by chat gpt, shoutout to chat gpt)
+function M.get_root()
+	local root_markers = {
+		".git",
+		".svn",
+		".hg",
+		"_darcs",
+		".bzr",
+		"package.json",
+		"Makefile",
+		"CMakeLists.txt",
+		".project",
+		".classpath",
+		".root",
+		"build.xml",
+	}
 
-function M.get_root(path_arg)
-	---@type string?
-	local path = path_arg
+	-- Get the current buffer's filename
+	local current_file = vim.fn.expand("%:p")
 
-	if path_arg == nil then
-		path = vim.api.nvim_buf_get_name(0)
-	end
-
-	path = path ~= "" and vim.loop.fs_realpath(path) or nil
-	---@type string[]
-	local roots = {}
-	if path then
-		for _, client in pairs(vim.lsp.get_active_clients({ bufnr = 0 })) do
-			local workspace = client.config.workspace_folders
-			local paths = workspace
-					and vim.tbl_map(function(ws)
-						return vim.uri_to_fname(ws.uri)
-					end, workspace)
-				or client.config.root_dir and { client.config.root_dir }
-				or {}
-			for _, p in ipairs(paths) do
-				local r = vim.loop.fs_realpath(p)
-				if path:find(r, 1, true) then
-					roots[#roots + 1] = r
-				end
-			end
+	-- Search for root markers in the current file's path
+	for _, marker in ipairs(root_markers) do
+		local root_path = vim.fn.finddir(marker, vim.fn.expand("%:p:h") .. ";")
+		if root_path ~= "" then
+			return vim.fn.fnamemodify(root_path, ":h")
 		end
 	end
-	table.sort(roots, function(a, b)
-		return #a > #b
-	end)
-	---@type string?
-	local root = roots[1]
-	if not root then
-		path = path and vim.fs.dirname(path) or vim.loop.cwd()
-		---@type string?
-		root = vim.fs.find(M.root_patterns, { path = path, upward = true })[1]
-		root = root and vim.fs.dirname(root) or vim.loop.cwd()
-	end
-	---@cast root string
-	return root
+
+	-- If no root marker is found, return the current file's directory
+	return vim.fn.expand("%:p:h")
 end
 
 function M.buf_kill(kill_command, bufnr, force)

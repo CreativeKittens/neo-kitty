@@ -21,6 +21,7 @@ return {
 	end,
 	opts = function()
 		local mocha = require("catppuccin.palettes").get_palette("mocha")
+
 		return {--[[ things you want to change go here]]
 			size = 10,
 			shell = vim.o.shell,
