@@ -17,7 +17,7 @@ return {
 			{
 				"<leader>g",
 				function()
-					require("telescope.builtin").find_files({ cwd = root, search_dirs = { root } })
+					require("telescope.builtin").live_grep({ cwd = root, search_dirs = { root } })
 				end,
 				silent = true,
 			},
